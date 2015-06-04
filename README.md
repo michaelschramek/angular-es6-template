@@ -1,2 +1,2 @@
 # angular-es6-template
-Angular Template with ES6 Codestyle
+Angular Template with ES6
