@@ -7,25 +7,29 @@
   "author": "Michael Schramek",
   "license": "MIT",
   "devDependencies": {
+    "browser-sync": "^2.7.13",
     "http-server": "^0.8.0",
     "opener": "^1.4.1",
     "parallelshell": "^1.1.1",
     "rimraf": "latest"
   },
   "scripts": {
-    "prestart": "npm update",
+    "prestart": "npm update && npm run jspm:install",
+    "start": "npm run serve",
+    "jspm:install": "jspm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf .tmp dist",
     "serve": "http-server -p 8080 -a localhost ./",
     "open": "opener http://localhost:8080/app",
     "dev": "npm run open && parallelshell \"npm run serve\" ",
-    "live-reload": "browser-sync start --server --files \"app/**/*.js\" " 
+    "live-reload": "browser-sync start --server --files \"app/**/*.js, app/**/*.html\" "
   },
   "jspm": {
     "directories": {},
     "dependencies": {
       "angular": "github:angular/bower-angular@^1.4.0",
-      "angular-resource": "github:angular/bower-angular-resource@^1.4.0"
+      "angular-resource": "github:angular/bower-angular-resource@^1.4.0",
+      "angular-ui-router": "github:angular-ui/ui-router@^0.2.15"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",
