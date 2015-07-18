@@ -20,6 +20,7 @@ System.config({
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
     "babel": "npm:babel-core@5.7.4",
     "babel-runtime": "npm:babel-runtime@5.7.0",
+    "bootstrap-sass": "github:twbs/bootstrap-sass@3.3.5",
     "core-js": "npm:core-js@0.9.13",
     "jquery": "github:components/jquery@2.1.4",
     "github:angular-ui/ui-router@0.2.15": {
