@@ -20,7 +20,7 @@
     "prestart": "npm install && npm run jspm:install",
     "start": "npm run live-reload",
     "jspm:install": "jspm install",
-    "pretest": "jshint app/app.js",
+    "pretest": "jshint app/.",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf .tmp dist",
     "serve": "http-server -p 8080 -a localhost ./",
