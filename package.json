@@ -22,17 +22,18 @@
     "serve": "http-server -p 8080 -a localhost ./",
     "open": "opener http://localhost:8080/app",
     "dev": "npm run open && parallelshell \"npm run serve\" ",
-    "live-reload": "browser-sync start --server --files \"app/**/*.js, app/**/*.html\" "
+    "live-reload": "browser-sync start --server --files \"app/**/*.js, app/**/*.html, index.html\" "
   },
   "jspm": {
     "directories": {},
     "dependencies": {
       "angular": "github:angular/bower-angular@^1.4.0",
       "angular-resource": "github:angular/bower-angular-resource@^1.4.0",
-      "angular-ui-router": "github:angular-ui/ui-router@^0.2.15"
+      "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
+      "babel": "npm:babel-core@^5.7.4"
     },
     "devDependencies": {
-      "babel": "npm:babel-core@^5.1.13",
+      "babel": "npm:babel-core@^5.7.4",
       "babel-runtime": "npm:babel-runtime@^5.1.13",
       "core-js": "npm:core-js@^0.9.4"
     }
