@@ -14,7 +14,7 @@
     "rimraf": "latest"
   },
   "scripts": {
-    "prestart": "npm update && npm run jspm:install",
+    "prestart": "npm install && npm run jspm:install",
     "start": "npm run serve",
     "jspm:install": "jspm install",
     "test": "echo \"Error: no test specified\" && exit 1",
