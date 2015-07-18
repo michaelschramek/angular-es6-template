@@ -8,7 +8,7 @@ class UserController extends PageController {
 
         this.clickError = function () {
             $log.log('error');
-        }
+        };
     }
  
     init(){
@@ -29,4 +29,4 @@ class UserController extends PageController {
  
 UserController.$inject = ['$log', '$http', 'RestService'];
  
-export { UserController }
+export { UserController };

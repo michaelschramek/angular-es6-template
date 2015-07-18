@@ -8,4 +8,4 @@ class PageController {
         return 'Title: ' + this._title;
     }
 }
-export { PageController }
+export { PageController };

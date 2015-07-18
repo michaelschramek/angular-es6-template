@@ -1,3 +1,5 @@
+import { RestService } from './RestService';
+
 class ClientLoggingService {
     constructor($http, $resource){
         this.$http = $http;
@@ -23,4 +25,4 @@ class ClientLoggingService {
  
 ClientLoggingService.factory.$inject = ['$http', '$resource'];
  
-export { ClientLoggingService }
+export { ClientLoggingService };

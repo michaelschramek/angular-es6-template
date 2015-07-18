@@ -8,4 +8,4 @@ class ProductPageController extends PageController {
     }
 }
 
-export { ProductPageController }
+export { ProductPageController };

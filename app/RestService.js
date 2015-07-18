@@ -23,4 +23,4 @@ class RestService {
  
 RestService.factory.$inject = ['$http', '$resource'];
  
-export { RestService }
+export { RestService };
