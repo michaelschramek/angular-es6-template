@@ -1,6 +1,7 @@
-import "bootstrap/css/bootstrap.css!";
+//import "bootstrap/css/bootstrap.css!";
 
 import $ from'jquery';
+import 'github:twbs/bootstrap@3.3.5/js/bootstrap';
 
 import angular from 'angular';
 import ngResource from 'angular-resource';

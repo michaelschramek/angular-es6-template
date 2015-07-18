@@ -21,6 +21,7 @@ System.config({
     "babel": "npm:babel-core@5.7.4",
     "babel-runtime": "npm:babel-runtime@5.7.0",
     "core-js": "npm:core-js@0.9.13",
+    "jquery": "github:components/jquery@2.1.4",
     "github:angular-ui/ui-router@0.2.15": {
       "angular": "github:angular/bower-angular@1.4.3"
     },
