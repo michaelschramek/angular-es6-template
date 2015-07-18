@@ -1,3 +1,7 @@
+import "bootstrap/css/bootstrap.css!";
+
+import $ from'jquery';
+
 import angular from 'angular';
 import ngResource from 'angular-resource';
 import 'angular-ui-router';
