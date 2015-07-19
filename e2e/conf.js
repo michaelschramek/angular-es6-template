@@ -16,5 +16,15 @@ exports.config = {
   seleniumArgs: ['-browserTimeout=1'],
 
   //  seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['spec.js']
+    specs: ['spec.js'],
+
+    framework: 'jasmine2',
+    onPrepare: function() {
+        var jasmineReporters = require('jasmine-reporters');
+        jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
+            consolidateAll: true,
+            savePath: 'testresults',
+            filePrefix: 'xmloutput'
+        }));
+    }
 }
