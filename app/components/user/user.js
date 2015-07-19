@@ -4,20 +4,18 @@ import uiRouter from 'angular-ui-router';
 import {appName, baseUrl} from '../../config/constants';
 
 import { UserController } from './UserController';
-import { ProductPageController } from './ProductPageController';
 
-import { RestService } from './RestService';
+import { UserRestService } from './UserRestService';
 
 let UserComponent = angular.module(`${appName}.user`, [  
   'ui.router'
 ]);
 
 UserComponent
-.factory('RestService', RestService.factory)
+.service('UserRestService', UserRestService)
 .controller('UserController', UserController)
-.controller('ProductPageController', ProductPageController)
 //.config($locationProvider => $locationProvider.html5Mode(true))
-.config(($stateProvider) => {
+.config(($stateProvider, RestangularProvider) => {
   $stateProvider
     .state('root', {
       url: '/',
@@ -25,6 +23,9 @@ UserComponent
       controllerAs: 'vm',
       templateUrl: 'app/components/user/user-template.html',
     });
+
+  // set restful base API Route
+  RestangularProvider.setBaseUrl('https://api.github.com');
 });
 
 export default UserComponent;

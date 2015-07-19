@@ -1,9 +1,10 @@
-import { PageController } from './PageController';
+import { PageController } from '../../abstract/PageController';
 
 class UserController extends PageController {
-    constructor($log, $http, RestService) {
-        super('Hello World');
-        this.RestService = RestService;
+    constructor($log, $http, UserRestService) {
+        let text = 'Hello World';
+        super(text);
+        this.UserRestService = UserRestService;
         this.init();
 
         this.clickError = function () {
@@ -13,20 +14,13 @@ class UserController extends PageController {
  
     init(){
         
-        this.RestService.getUsers().then(users => {
+        this.UserRestService.getAll().then(users => {
                 this.users = users;
                 console.log(users);
             });
-        
-        /* 
-        this.RestService.getService().query(function (data) {
-            this.users = data;
-            console.log(data);
-        });
-        */
     }
 }
  
-UserController.$inject = ['$log', '$http', 'RestService'];
+UserController.$inject = ['$log', '$http', 'UserRestService'];
  
 export { UserController };

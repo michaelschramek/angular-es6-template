@@ -49,7 +49,9 @@
       "angular-ui-router": "github:angular-ui/ui-router@^0.2.15",
       "babel": "npm:babel-core@^5.7.4",
       "bootstrap-sass": "github:twbs/bootstrap-sass@^3.3.5",
-      "jquery": "github:components/jquery@^2.1.4"
+      "jquery": "github:components/jquery@^2.1.4",
+      "lodash": "npm:lodash@^3.10.0",
+      "restangular": "github:mgonto/restangular@^1.5.1"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.7.4",

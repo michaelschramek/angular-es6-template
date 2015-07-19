@@ -4,12 +4,18 @@ import $ from'jquery';
 //import 'github:twbs/bootstrap-sass@3.3.5/js/bootstrap';
 
 import angular from 'angular';
-import ngResource from 'angular-resource';
+//import ngResource from 'angular-resource';
+
+import _ from 'lodash';
+window._ = _;
+import 'restangular';
+
 import uiRouter from 'angular-ui-router';
 
 import UserComponent from './components/user/user';
 
 var app = angular.module('template', [
-	'ngResource', 'ui.router',
+	'ui.router',
+	'restangular',
 	UserComponent.name
 ]);
