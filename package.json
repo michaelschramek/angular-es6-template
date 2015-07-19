@@ -9,11 +9,14 @@
   "devDependencies": {
     "browser-sync": "^2.7.13",
     "clean-css": "^3.3.6",
+    "handlebars": "^3.0.3",
     "http-server": "^0.8.0",
+    "jasmine": "^2.3.1",
     "jshint": "^2.8.0",
     "node-sass": "^3.2.0",
     "opener": "^1.4.1",
     "parallelshell": "^1.1.1",
+    "protractor": "^2.1.0",
     "rimraf": "latest"
   },
   "scripts": {
@@ -27,10 +30,15 @@
     "open": "opener http://localhost:8080/app",
     "dev": "npm run open && parallelshell \"npm run serve\" ",
     "live-reload": "browser-sync start --server --files \"app/**/*.js, app/**/*.html, index.html\" ",
-    "build-js": "jspm bundle-sfx app/app bundle.js",
+    "build-js": "jspm bundle app/app --inject",
     "build-min-js": "jspm bundle-sfx app/app bundle.js --minify",
     "build-sass": "node-sass app/main.scss -o css/",
-    "build-min-sass": "node-sass app/main.scss | cleancss -o css/main.min.css"
+    "build-min-sass": "node-sass app/main.scss | cleancss -o css/main.min.css",
+    "handlebars": "handlebars hbs.handlebars -f out.html",
+    "pree2e-test": "webdriver-manager update",
+    "e2e-test": "parallelshell \"webdriver-manager start\" \"protractor e2e/conf.js\" ",
+    "e2e-start": "webdriver-manager start",
+    "e2e": "protractor e2e/conf.js"
   },
   "jspm": {
     "directories": {},
