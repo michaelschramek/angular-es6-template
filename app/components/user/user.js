@@ -7,12 +7,15 @@ import { UserController } from './UserController';
 
 import { UserRestService } from './UserRestService';
 
+import { NgResourceUserRestService } from './NgResourceUserRestService';
+
 let UserComponent = angular.module(`${appName}.user`, [  
   'ui.router'
 ]);
 
 UserComponent
 .service('UserRestService', UserRestService)
+.service('NgResourceUserRestService', NgResourceUserRestService)
 .controller('UserController', UserController)
 //.config($locationProvider => $locationProvider.html5Mode(true))
 .config(($stateProvider) => {

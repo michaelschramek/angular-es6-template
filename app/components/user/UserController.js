@@ -1,10 +1,11 @@
 import { PageController } from '../../abstract/PageController';
 
 class UserController extends PageController {
-    constructor($log, $http, UserRestService) {
+    constructor($log, $http, UserRestService, NgResourceUserRestService) {
         let text = 'Hello World';
         super(text);
         this.UserRestService = UserRestService;
+        this.NgResourceUserRestService = NgResourceUserRestService;
         this.init();
 
         this.clickError = function () {
@@ -15,9 +16,23 @@ class UserController extends PageController {
     init(){
         
         this.UserRestService.getAll().then(users => {
-                this.users = users;
+            this.users = users;
+            console.log(users);
+        });
+
+        /*
+        this.NgResourceUserRestService.getAll()
+            // on success...
+            .then(users => {
+                this.usersNeu = users;
                 console.log(users);
+            
+            }, 
+            function (repsonse) {
+            // something went wrong
+             console.log(response);
             });
+        */
 
         this.UserRestService.findById('mojombo').then(user => {
             this.userName = user.name;
@@ -26,6 +41,6 @@ class UserController extends PageController {
     }
 }
  
-UserController.$inject = ['$log', '$http', 'UserRestService'];
+UserController.$inject = ['$log', '$http', 'UserRestService', 'NgResourceUserRestService'];
  
 export { UserController };
