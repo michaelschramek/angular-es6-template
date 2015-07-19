@@ -1,3 +1,14 @@
+var fs = require('fs');
+
+// abstract writing screen shot to a file
+function writeScreenShot(data, filename) {
+    var stream = fs.createWriteStream(filename);
+
+    stream.write(new Buffer(data, 'base64'));
+    stream.end();
+}
+
+
 describe('angularjs homepage todo list', function() {
   it('should add a todo', function() {
     browser.get('https://angularjs.org');
@@ -13,5 +24,10 @@ describe('angularjs homepage todo list', function() {
     todoList.get(2).element(by.css('input')).click();
     var completedAmount = element.all(by.css('.done-true'));
     expect(completedAmount.count()).toEqual(2);
+
+    // within a test:
+    browser.takeScreenshot().then(function (png) {
+        writeScreenShot(png, 'testresults/exception.png');
+    });
   });
 });
