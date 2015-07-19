@@ -18,6 +18,11 @@ class UserController extends PageController {
                 this.users = users;
                 console.log(users);
             });
+
+        this.UserRestService.findById('mojombo').then(user => {
+            this.userName = user.name;
+            console.log(user);
+        });
     }
 }
  

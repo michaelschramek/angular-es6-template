@@ -6,13 +6,31 @@ class RestService {
     }
 
     findById(id) {
-
+        return this.Restangular
+            .one(this.resourceName, id)
+            .get();
     }
  
     getAll() {
         return this.Restangular
         	.all(this.resourceName)
         	.getList();
+    }
+
+    create(entity) {
+        
+    }
+
+    update(entity) {
+        
+    }
+
+    delete(entity) {
+
+    }
+
+    deleteById(id) {
+
     }
 }
  
