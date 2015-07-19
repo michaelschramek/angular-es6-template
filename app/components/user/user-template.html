@@ -1,0 +1,10 @@
+
+
+    <button ng-click="vm.clickError()">Error</button>
+
+    <h1 ng-controller="ProductPageController as pp">{{pp.title()}}</h1>
+
+    <h2>List of Github users</h2>
+        <ul ng-repeat="usr in vm.users">
+            <li>{{usr.id}}. {{usr.login}} <img src="{{usr.avatar_url}}" height="50px" alt=""></li>
+        </ul>
