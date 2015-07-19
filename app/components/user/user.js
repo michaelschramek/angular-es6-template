@@ -15,7 +15,7 @@ UserComponent
 .service('UserRestService', UserRestService)
 .controller('UserController', UserController)
 //.config($locationProvider => $locationProvider.html5Mode(true))
-.config(($stateProvider, RestangularProvider) => {
+.config(($stateProvider) => {
   $stateProvider
     .state('root', {
       url: '/',
@@ -24,8 +24,6 @@ UserComponent
       templateUrl: 'app/components/user/user-template.html',
     });
 
-  // set restful base API Route
-  RestangularProvider.setBaseUrl('https://api.github.com');
 });
 
 export default UserComponent;

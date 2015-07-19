@@ -19,3 +19,8 @@ var app = angular.module('template', [
 	'restangular',
 	UserComponent.name
 ]);
+
+app.config((RestangularProvider) => {
+	// set restful base API Route
+	RestangularProvider.setBaseUrl('https://api.github.com');
+});
